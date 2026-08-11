@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Distrore — toko baju anak modern, nyaman, dan stylish." />
+  <title>DiStore — Baju Anak Modern</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="announcement">✨ Gratis konsultasi ukuran • Pengiriman dari Cileungsi • Checkout via WhatsApp</div>
+
+  <header class="header">
+    <div class="container nav">
+      <a class="logo" href="#home" aria-label="DiStore Home">
+        <span class="logo-mark">di</span><span>store</span>
+      </a>
+
+      <nav class="desktop-nav" aria-label="Navigasi utama">
+        <a href="#home">Home</a>
+        <a href="#produk">Produk</a>
+        <a href="#kategori">Kategori</a>
+        <a href="#tentang">Tentang</a>
+        <a href="#kontak">Kontak</a>
+      </nav>
+
+      <div class="nav-actions">
+        <button class="icon-btn" id="searchBtn" aria-label="Cari produk">⌕</button>
+        <a class="cart-btn" href="#produk" aria-label="Lihat produk">🛍️ <span class="cart-count">0</span></a>
+        <button class="menu-btn" id="menuBtn" aria-label="Buka menu">☰</button>
+      </div>
+    </div>
+
+    <div class="mobile-menu" id="mobileMenu">
+      <a href="#home">Home</a>
+      <a href="#produk">Produk</a>
+      <a href="#kategori">Kategori</a>
+      <a href="#tentang">Tentang</a>
+      <a href="#kontak">Kontak</a>
+    </div>
+  </header>
+
+  <div class="search-panel" id="searchPanel">
+    <div class="container search-inner">
+      <input id="searchInput" type="search" placeholder="Cari kaos, dress, set anak..." autocomplete="off" />
+      <button id="closeSearch" aria-label="Tutup pencarian">✕</button>
+    </div>
+  </div>
+
+  <main id="home">
+    <section class="hero">
+      <div class="container hero-grid">
+        <div class="hero-copy">
+          <span class="eyebrow"><span></span> Kidswear made happy</span>
+          <h1>Outfit kecil,<br><em>gaya besar.</em></h1>
+          <p>Baju anak yang nyaman dipakai bermain, lucu untuk dipandang, dan tetap kece setiap hari.</p>
+          <div class="hero-buttons">
+            <a class="btn btn-primary" href="#produk">Belanja Sekarang <span>→</span></a>
+            <a class="btn btn-light" href="#kategori">Lihat Kategori</a>
+          </div>
+          <div class="trust-row">
+            <div><strong>500+</strong><span>Happy Parents</span></div>
+            <div><strong>4.9/5</strong><span>Rating pelanggan</span></div>
+            <div><strong>100%</strong><span>Nyaman dipakai</span></div>
+          </div>
+        </div>
+        <div class="hero-visual">
+          <div class="sun"></div>
+          <div class="hero-card">
+            <img src="https://images.unsplash.com/photo-1622290291468-a28f7a7dc6a8?auto=format&fit=crop&w=900&q=85" alt="Anak mengenakan pakaian kasual" />
+            <div class="hero-tag"><span>NEW</span><b>Kids<br>Collection</b></div>
+          </div>
+          <div class="floating-note">☀️ <b>Comfy all day</b><small>Siap menemani bermain</small></div>
+          <div class="shape shape-one"></div><div class="shape shape-two"></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="categories" id="kategori">
+      <div class="container">
+        <div class="section-head">
+          <div><span class="eyebrow">PILIH SESUAI STYLE</span><h2>Temukan favorit si kecil</h2></div>
+          <a href="#produk" class="text-link">Lihat semua →</a>
+        </div>
+        <div class="category-grid">
+          <button class="category-card active" data-filter="all">
+            <span class="cat-icon cat-orange">✦</span><span><b>Semua</b><small>Koleksi pilihan</small></span>
+          </button>
+          <button class="category-card" data-filter="boys">
+            <span class="cat-icon cat-blue">◒</span><span><b>Boy's Wear</b><small>Gaya aktif & fun</small></span>
+          </button>
+          <button class="category-card" data-filter="girls">
+            <span class="cat-icon cat-pink">♡</span><span><b>Girl's Wear</b><small>Manis & playful</small></span>
+          </button>
+          <button class="category-card" data-filter="set">
+            <span class="cat-icon cat-yellow">✿</span><span><b>Set Outfit</b><small>Praktis & matching</small></span>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <section class="products" id="produk">
+      <div class="container">
+        <div class="section-head">
+          <div><span class="eyebrow">BEST SELLER</span><h2>Paling disukai minggu ini</h2></div>
+          <div class="filter-pills" aria-label="Filter produk">
+            <button class="pill active" data-filter="all">Semua</button>
+            <button class="pill" data-filter="boys">Boys</button>
+            <button class="pill" data-filter="girls">Girls</button>
+            <button class="pill" data-filter="set">Set</button>
+          </div>
+        </div>
+        <div class="product-grid" id="productGrid">
+          <article class="product-card" data-category="girls" data-name="Sunny Daisy Dress">
+            <div class="product-image"><span class="badge hot">BEST SELLER</span><button class="heart" aria-label="Favorit">♡</button>
+              <img src="https://images.unsplash.com/photo-1518831959646-742c3a14ebf7?auto=format&fit=crop&w=700&q=85" alt="Sunny Daisy Dress">
+            </div>
+            <div class="product-info"><span>GIRLS • 2–7 TAHUN</span><h3>Sunny Daisy Dress</h3><div class="price">Rp89.000</div><button class="add-btn" data-product="Sunny Daisy Dress">Tambah ke keranjang <b>+</b></button></div>
+          </article>
+
+          <article class="product-card" data-category="boys" data-name="Mini Explorer Tee">
+            <div class="product-image"><span class="badge new">NEW</span><button class="heart" aria-label="Favorit">♡</button>
+              <img src="https://images.unsplash.com/photo-1519238263530-99bdd11df2ea?auto=format&fit=crop&w=700&q=85" alt="Mini Explorer Tee">
+            </div>
+            <div class="product-info"><span>BOYS • 3–8 TAHUN</span><h3>Mini Explorer Tee</h3><div class="price">Rp69.000</div><button class="add-btn" data-product="Mini Explorer Tee">Tambah ke keranjang <b>+</b></button></div>
+          </article>
+
+          <article class="product-card" data-category="set" data-name="Happy Day Set">
+            <div class="product-image"><span class="badge sale">HEMAT 15%</span><button class="heart" aria-label="Favorit">♡</button>
+              <img src="https://images.unsplash.com/photo-1545558014-8692077e9b5c?auto=format&fit=crop&w=700&q=85" alt="Happy Day Set">
+            </div>
+            <div class="product-info"><span>SET OUTFIT • 2–6 TAHUN</span><h3>Happy Day Set</h3><div class="price">Rp109.000 <del>Rp129.000</del></div><button class="add-btn" data-product="Happy Day Set">Tambah ke keranjang <b>+</b></button></div>
+          </article>
+
+          <article class="product-card" data-category="girls" data-name="Little Bloom Top">
+            <div class="product-image"><button class="heart" aria-label="Favorit">♡</button>
+              <img src="https://images.unsplash.com/photo-1596870230751-ebdfce98ec42?auto=format&fit=crop&w=700&q=85" alt="Little Bloom Top">
+            </div>
+            <div class="product-info"><span>GIRLS • 3–8 TAHUN</span><h3>Little Bloom Top</h3><div class="price">Rp79.000</div><button class="add-btn" data-product="Little Bloom Top">Tambah ke keranjang <b>+</b></button></div>
+          </article>
+
+          <article class="product-card" data-category="boys" data-name="Tiny Adventure Shirt">
+            <div class="product-image"><button class="heart" aria-label="Favorit">♡</button>
+              <img src="https://images.unsplash.com/photo-1519457431-44ccd64a579b?auto=format&fit=crop&w=700&q=85" alt="Tiny Adventure Shirt">
+            </div>
+            <div class="product-info"><span>BOYS • 3–9 TAHUN</span><h3>Tiny Adventure Shirt</h3><div class="price">Rp99.000</div><button class="add-btn" data-product="Tiny Adventure Shirt">Tambah ke keranjang <b>+</b></button></div>
+          </article>
+
+          <article class="product-card" data-category="set" data-name="Playdate Duo Set">
+            <div class="product-image"><span class="badge new">NEW</span><button class="heart" aria-label="Favorit">♡</button>
+              <img src="https://images.unsplash.com/photo-1607453998774-d533f65dac99?auto=format&fit=crop&w=700&q=85" alt="Playdate Duo Set">
+            </div>
+            <div class="product-info"><span>SET OUTFIT • 1–5 TAHUN</span><h3>Playdate Duo Set</h3><div class="price">Rp119.000</div><button class="add-btn" data-product="Playdate Duo Set">Tambah ke keranjang <b>+</b></button></div>
+          </article>
+        </div>
+        <div class="empty-state" id="emptyState">Produk tidak ditemukan. Coba kata kunci lain ya ✨</div>
+      </div>
+    </section>
+
+    <section class="benefits">
+      <div class="container benefit-grid">
+        <div><span>🚚</span><div><b>Pengiriman cepat</b><small>Diproses setiap hari kerja</small></div></div>
+        <div><span>↻</span><div><b>Tukar ukuran</b><small>Jangan khawatir salah size</small></div></div>
+        <div><span>♡</span><div><b>Bahan nyaman</b><small>Dipilih untuk kulit anak</small></div></div>
+        <div><span>💬</span><div><b>Chat langsung</b><small>Konsultasi via WhatsApp</small></div></div>
+      </div>
+    </section>
+
+    <section class="about" id="tentang">
+      <div class="container about-grid">
+        <div class="about-image"><img src="https://images.unsplash.com/photo-1472162072942-cd5147eb3902?auto=format&fit=crop&w=900&q=85" alt="Anak bermain dengan ceria"></div>
+        <div class="about-copy"><span class="eyebrow">KENAPA DISTORE?</span><h2>Karena masa kecil<br><em>layak dirayakan.</em></h2><p>DiStore hadir untuk membantu Ayah & Bunda menemukan baju anak yang lucu, nyaman, dan mudah dipadukan. Kami percaya outfit terbaik adalah yang membuat si kecil bebas bergerak dan tetap jadi dirinya sendiri.</p><div class="about-points"><span>✓</span> Pilihan bahan nyaman</div><div class="about-points"><span>✓</span> Model kekinian & playful</div><div class="about-points"><span>✓</span> Harga ramah untuk keluarga</div></div>
+      </div>
+    </section>
+
+    <section class="cta" id="kontak">
+      <div class="container cta-inner"><div><span class="eyebrow">READY TO SHOP?</span><h2>Si kecil siap tampil kece? 💛</h2><p>Chat kami untuk cek stok, ukuran, dan pesan produk favoritmu.</p></div><a class="btn btn-dark" id="ctaWa" href="#">Chat WhatsApp <span>→</span></a></div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-grid">
+      <div><a class="logo footer-logo" href="#home"><span class="logo-mark">di</span><span>store</span></a><p>Kidswear modern untuk hari-hari kecil yang penuh cerita.</p></div>
+      <div><h4>Menu</h4><a href="#produk">Produk</a><a href="#kategori">Kategori</a><a href="#tentang">Tentang</a></div>
+      <div><h4>Kontak</h4><a href="https://wa.me/6282213133961" target="_blank" rel="noopener">0822 1313 3961</a><span>Komplek Puri Asri<br>Cileungsi, Jawa Barat</span></div>
+      <div><h4>Follow</h4><span>Instagram • TikTok</span><span>Senin–Sabtu • 09.00–18.00</span></div>
+    </div>
+    <div class="copyright">© 2026 DiStore. Made with ♡ for little ones.</div>
+  </footer>
+
+  <a class="wa-float" id="waFloat" href="#" target="_blank" rel="noopener" aria-label="Chat WhatsApp">
+    <span class="wa-icon">◔</span><span class="wa-label">Chat kami</span>
+  </a>
+
+  <button class="back-top" id="backTop" aria-label="Kembali ke atas">↑</button>
+  <div class="toast" id="toast">Ditambahkan ke keranjang 🛍️</div>
+  <script src="script.js"></script>
+</body>
+</html>
