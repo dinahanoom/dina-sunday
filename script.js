@@ -74,3 +74,105 @@ document.querySelector(".cart-btn").addEventListener("click", e => {
 const backTop = document.getElementById("backTop");
 window.addEventListener("scroll", () => backTop.classList.toggle("show", window.scrollY > 500));
 backTop.addEventListener("click", () => window.scrollTo({top:0, behavior:"smooth"}));
+
+
+// ================================
+// AUTO SCROLL SAAT TIDAK AKTIF
+// ================================
+const AUTO_SCROLL_DELAY = 2000; // 2 detik tanpa aktivitas
+const AUTO_SCROLL_STEP = 1.2;   // kecepatan scroll ke bawah
+const AUTO_SCROLL_INTERVAL = 30; // semakin kecil = semakin halus
+
+let autoScrollTimer = null;
+let autoScrollInterval = null;
+let autoScrolling = false;
+let programmaticScrolling = false;
+
+function stopAutoScroll() {
+  autoScrolling = false;
+
+  if (autoScrollTimer) {
+    clearTimeout(autoScrollTimer);
+    autoScrollTimer = null;
+  }
+
+  if (autoScrollInterval) {
+    clearInterval(autoScrollInterval);
+    autoScrollInterval = null;
+  }
+}
+
+function startAutoScroll() {
+  if (autoScrolling) return;
+
+  // Jangan menjalankan auto-scroll jika halaman memang tidak bisa di-scroll.
+  const maxScroll = document.documentElement.scrollHeight - window.innerHeight;
+  if (maxScroll <= 0) return;
+
+  autoScrolling = true;
+
+  autoScrollInterval = setInterval(() => {
+    const maxScrollPosition =
+      document.documentElement.scrollHeight - window.innerHeight;
+    const currentPosition = window.scrollY;
+
+    // Kalau sudah sampai paling bawah:
+    // langsung lompat cepat ke paling atas, lalu lanjut scroll pelan lagi.
+    if (currentPosition >= maxScrollPosition - 2) {
+      programmaticScrolling = true;
+      window.scrollTo({
+        top: 0,
+        behavior: "auto"
+      });
+
+      // Beri browser waktu menyelesaikan perpindahan ke atas.
+      setTimeout(() => {
+        programmaticScrolling = false;
+      }, 50);
+
+      return;
+    }
+
+    programmaticScrolling = true;
+    window.scrollBy({
+      top: AUTO_SCROLL_STEP,
+      left: 0,
+      behavior: "auto"
+    });
+
+    setTimeout(() => {
+      programmaticScrolling = false;
+    }, 20);
+  }, AUTO_SCROLL_INTERVAL);
+}
+
+function resetAutoScrollTimer() {
+  stopAutoScroll();
+
+  autoScrollTimer = setTimeout(() => {
+    startAutoScroll();
+  }, AUTO_SCROLL_DELAY);
+}
+
+// Aktivitas user menghentikan auto-scroll dan memulai hitungan 2 detik lagi.
+const userActivityEvents = [
+  "mousemove",
+  "mousedown",
+  "click",
+  "keydown",
+  "touchstart",
+  "touchmove",
+  "wheel",
+  "pointerdown",
+  "pointermove"
+];
+
+userActivityEvents.forEach(eventName => {
+  window.addEventListener(eventName, () => {
+    if (programmaticScrolling) return;
+    resetAutoScrollTimer();
+  }, { passive: true });
+});
+
+// Mulai menghitung 2 detik sejak halaman dibuka.
+resetAutoScrollTimer();
